@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 namespace ProyectoCiclo3.App.Frontend
 {
     public class Startup
@@ -22,9 +22,12 @@ namespace ProyectoCiclo3.App.Frontend
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+    {
+        services.AddSingleton<RepositorioAeropuertos, RepositorioAeropuertos>();
+        services.AddSingleton<RepositorioAviones, RepositorioAviones>();
+        services.AddSingleton<RepositorioRutas, RepositorioRutas>();
             services.AddRazorPages();
-        }
+    }    
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

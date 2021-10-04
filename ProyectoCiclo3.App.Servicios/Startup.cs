@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-
+using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 namespace ProyectoCiclo3.App.Servicios
 {
     public class Startup
@@ -25,6 +25,10 @@ namespace ProyectoCiclo3.App.Servicios
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<RepositorioAeropuertos, RepositorioAeropuertos>();
+            services.AddSingleton<RepositorioAviones, RepositorioAviones>();
+            services.AddSingleton<RepositorioRutas, RepositorioRutas>();
+
             services.AddControllers();
         }
 
