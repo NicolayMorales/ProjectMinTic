@@ -14,13 +14,14 @@ namespace ProyectoCiclo3.App.Frontend.Pages
        
         private readonly RepositorioAviones repositorioAviones;
         public IEnumerable<Aviones> Aviones {get;set;}
- 
+         [BindProperty]
+        public Aviones Avion {get;set;}
+        
     public ListAvionesModel(RepositorioAviones repositorioAviones)
     {
         this.repositorioAviones=repositorioAviones;
      }
-     [BindProperty]
-        public Aviones Avion {get;set;}
+     
     public void OnGet()
     {
         Aviones=repositorioAviones.GetAll();

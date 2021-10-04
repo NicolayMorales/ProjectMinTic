@@ -31,7 +31,7 @@ public IActionResult OnPost()
             {
             Aviones= repositorioAviones.Create(Aviones);
             }
-            return Page();
+            return RedirectToPage("./List");
         }
 
     }

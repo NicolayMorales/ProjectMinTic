@@ -25,7 +25,10 @@
             <td>
               <a class="btn btn-info" asp-page="./Details" asp-route-avionesId="@aviones.id"><i class="fas fa-adjust"></i>Ver</a>
               <a class="btn btn-info" asp-page="./Edit" asp-route-avionesId="@aviones.id">Editar</a>
-              <a class="btn btn-danger"asp-page="./Details" asp-route-avionesId="@aviones.id"><i class="fas fa-adjust"></i>Eliminar</a>
+             <form method="POST">
+            <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@aviones.id">
+              <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+            </form>
               </td>
         </tr>
     }
