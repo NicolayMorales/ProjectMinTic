@@ -8,25 +8,14 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
     public class RepositorioRutas
     {
         List<Rutas> rutas;
- 
-    public RepositorioRutas()
+  private readonly AppContext _appContext = new AppContext();  
+            public IEnumerable<Rutas> GetAll()
         {
-            rutas= new List<Rutas>()
-            {
-                new Rutas{id=1 ,origen="BOG" ,destino= "CTG" ,tiempo_estimado= 660},
-                new Rutas{id=2 ,origen="CAL" ,destino= "MED" ,tiempo_estimado= 359}, 
-                new Rutas{id=3 ,origen="MED" ,destino= "BOG" ,tiempo_estimado= 62},
-                new Rutas{id=4 ,origen="CTG" ,destino= "CAL" ,tiempo_estimado= 240}
-             };
-        }
- 
-        public IEnumerable<Rutas> GetAll()
-        {
-            return rutas;
+            return _appContext.Rutas;
         }
  
         public Rutas GetRutasWithId(int id){
-            return rutas.SingleOrDefault(b => b.id == id);
+            return _appContext.Rutas.Find(id);
         }
         public Rutas Create(Rutas newRuta)
         {
@@ -38,13 +27,12 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
            rutas.Add(newRuta);
            return newRuta;
         }
-
-    public Rutas Update(Rutas newRutas){
-            var ruta= rutas.SingleOrDefault(b => b.id == newRutas.id);
+    public Rutas Update(Rutas newRuta){
+            var ruta= rutas.SingleOrDefault(b => b.id == newRuta.id);
             if(ruta != null){
-                ruta.origen = newRutas.origen;
-                ruta.destino = newRutas.destino;
-                ruta.tiempo_estimado = newRutas.tiempo_estimado;
+                ruta.origen = newRuta.origen;
+                ruta.destino = newRuta.destino;
+                ruta.tiempo_estimado = newRuta.tiempo_estimado;
                                 
             }
         return ruta;

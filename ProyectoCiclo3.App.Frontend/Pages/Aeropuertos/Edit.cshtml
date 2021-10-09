@@ -1,11 +1,11 @@
 @page
-@model ProyectoCiclo3.App.Frontend.Pages.EditAeropuertosModel
+@model ProyectoCiclo3.App.Frontend.Pages.EditAeropuertoModel
 @{
-    var aeropuertos = Model.Aeropuertos;
+    var aeropuerto = Model.Aeropuerto;
 }
  
 <div class="text-center">
-<form action="">
+<form method="post">
   <label for="nombre" class="form-label">Nombre:</label>
   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
   <label for="ciudad" class="form-label">Ciudad:</label>

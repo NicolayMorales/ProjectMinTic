@@ -9,19 +9,19 @@ using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
-    public class DetailsAvionesModel : PageModel
+    public class DetailsAvionModel : PageModel
     {
        private readonly RepositorioAviones repositorioAviones;
-              public Aviones Aviones {get;set;}
+              public Aviones Avion {get;set;}
  
-        public DetailsAvionesModel(RepositorioAviones repositorioAviones)
+        public DetailsAvionModel(RepositorioAviones repositorioAviones)
        {
             this.repositorioAviones=repositorioAviones;
        }
  
-        public IActionResult OnGet(int avionesId)
+        public IActionResult OnGet(int avionId)
         {
-                Aviones=repositorioAviones.GetAvionesWithId(avionesId);
+                Avion=repositorioAviones.GetAvionWithId(avionId);
                 return Page();
  
         }

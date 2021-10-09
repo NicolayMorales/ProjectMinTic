@@ -5,37 +5,24 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col">Nombre_Aeropuerto</th>
-      <th scope="col">Dirección</th>
+      <th>#</th>
+      <th>Ciudad</th>
+      <th>Nombre_Aeropuerto</th>
+      <th>Dirección</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Bogotá(BOG)</td>
-      <td>Aeropuerto_Internacional_El_Dorado</td>
-      <td>Av.El Dorado</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>Facebook</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>Arias</td>
-      <td>Instagram</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Larry the Bird</td>
-      <td>Arias</td>
-      <td>Instagram</td>
-    </tr>
-
-  </tbody>
+@foreach (var aeropuerto in Model.Aeropuertos)
+    {
+        <tr>
+            <td>@aeropuerto.#</td>
+            <td>@aeropuerto.Ciudad</td>
+            <td>@aeropuerto.Nombre_Aeropuerto</td>
+            <td>@aeropuerto.Dirección</td>
+            <td>
+     <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
+              </td>
+        </tr>
+    }
 </table>

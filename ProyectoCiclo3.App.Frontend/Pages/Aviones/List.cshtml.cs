@@ -9,7 +9,7 @@ using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
-    public class ListAvionesModel : PageModel
+    public class ListAvionModel : PageModel
     {
        
         private readonly RepositorioAviones repositorioAviones;
@@ -17,7 +17,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
          [BindProperty]
         public Aviones Avion {get;set;}
         
-    public ListAvionesModel(RepositorioAviones repositorioAviones)
+    public ListAvionModel(RepositorioAviones repositorioAviones)
     {
         this.repositorioAviones=repositorioAviones;
      }
@@ -30,7 +30,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     {
         if(Avion.id>0)
         {
-        Avion = repositorioAviones.Delete(Avion.id);
+        repositorioAviones.Delete(Avion.id);
           }
         return RedirectToPage("./List");
     }

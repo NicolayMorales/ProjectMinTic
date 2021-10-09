@@ -1,14 +1,14 @@
 @page
-@model ProyectoCiclo3.App.Frontend.Pages.DetailsAvionesModel
+@model ProyectoCiclo3.App.Frontend.Pages.DetailsAvionModel
 @{
-    var aviones = Model.Aviones;
+    var avion = Model.Avion;
 }
  
 <ul class="list-group list-group-flush">
-  <li class="list-group-item"> <b>id: </b> @aviones.id</li>
-  <li class="list-group-item"> <b>Marca: </b> @aviones.marca</li>
-  <li class="list-group-item"> <b>Modelo: </b> @aviones.modelo</li>
-  <li class="list-group-item"><b>num_asientos: </b> @aviones.num_asientos</li>
-  <li class="list-group-item"><b>Wc: </b> @aviones.Wc</li>
-  <li class="list-group-item"><b>cap_maxima: </b> @aviones.cap_maxima</li>
+  <li class="list-group-item"> <b>id: </b> @avion.id</li>
+  <li class="list-group-item"> <b>Marca: </b> @avion.marca</li>
+  <li class="list-group-item"> <b>Modelo: </b> @avion.modelo</li>
+  <li class="list-group-item"><b>num_asientos: </b> @avion.num_asientos</li>
+  <li class="list-group-item"><b>Wc: </b> @avion.Wc</li>
+  <li class="list-group-item"><b>cap_maxima: </b> @avion.cap_maxima</li>
 </ul>	

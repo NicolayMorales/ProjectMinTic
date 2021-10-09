@@ -7,23 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 using ProyectoCiclo3.App.Dominio;
  
-namespace ProyectoCiclo3.App.Frontend.Pages
-{
-    public class DetailsAeropuertosModel : PageModel
-    {
-       private readonly RepositorioAeropuertos repositorioAeropuertos;
-              public Aeropuertos Aeropuertos {get;set;}
- 
-        public DetailsAeropuertosModel(RepositorioAeropuertos repositorioAeropuertos)
+  namespace ProyectoCiclo3.App.Frontend.Pages
+ {
+   public class DetailsAeropuertoModel : PageModel
+ {
+   private readonly RepositorioAeropuertos repositorioAeropuertos;
+      public Aeropuertos Aeropuerto {get;set;}
+   public DetailsAeropuertoModel(RepositorioAeropuertos repositorioAeropuertos)
        {
-            this.repositorioAeropuertos=repositorioAeropuertos;
+       this.repositorioAeropuertos=repositorioAeropuertos;
        }
- 
-        public IActionResult OnGet(int aeropuertosId)
-        {
-                Aeropuertos=repositorioAeropuertos.GetAeropuertosWithId(aeropuertosId);
-                return Page();
- 
-        }
-    }
+     public IActionResult OnGet(int aeropuertoId)
+   {
+     Aeropuerto=repositorioAeropuertos.GetAeropuertosWithId(aeropuertoId);
+    return Page();
+  } 
+ }
 }

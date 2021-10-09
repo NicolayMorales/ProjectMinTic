@@ -11,7 +11,6 @@ namespace ProyectoCiclo3.App.Frontend.Pages
 {
     public class FormAeropuertoModel : PageModel
     {
- 
         private readonly RepositorioAeropuertos repositorioAeropuertos;
         [BindProperty]
         public Aeropuertos Aeropuerto {get;set;}
@@ -20,20 +19,23 @@ namespace ProyectoCiclo3.App.Frontend.Pages
        {
             this.repositorioAeropuertos=repositorioAeropuertos;
        }
- 
-        public void OnGet()
+         public void OnGet()
         {
  
         }
- 
-        public IActionResult OnPost()
+
+public IActionResult OnPost()
         {
             if(!ModelState.IsValid)
             {
                 return Page();
-            }            
-            Aeropuerto = repositorioAeropuertos.Create(Aeropuerto);            
+            }
+            
+            {
+            Aeropuerto= repositorioAeropuertos.Create(Aeropuerto);
+            }
             return RedirectToPage("./List");
         }
+
     }
 }
