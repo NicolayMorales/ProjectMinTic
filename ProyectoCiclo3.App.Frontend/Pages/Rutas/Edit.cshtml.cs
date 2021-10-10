@@ -8,21 +8,22 @@ using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
+
 {
-    public class EditRutasModel : PageModel
+    public class EditRutaModel : PageModel
     {
         private readonly RepositorioRutas repositorioRutas;
         [BindProperty]
-        public Rutas Rutas {get;set;}
+        public Rutas Ruta {get;set;}
  
-        public EditRutasModel(RepositorioRutas repositorioRutas)
+        public EditRutaModel(RepositorioRutas repositorioRutas)
        {
             this.repositorioRutas=repositorioRutas;
        }
  
-        public IActionResult OnGet(int rutasId)
+        public IActionResult OnGet(int rutaId)
         {
-                Rutas=repositorioRutas.GetRutasWithId(rutasId);
+                Ruta=repositorioRutas.GetRutaWithId(rutaId);
                 return Page();
  
         }
@@ -32,11 +33,12 @@ public IActionResult OnPost()
             {
                 return Page();
             }
-            if(Rutas.id>0)
+            if(Ruta.id>0)
             {
-            Rutas= repositorioRutas.Update(Rutas);
+            Ruta= repositorioRutas.Update(Ruta);
             }
-            return Page();
+            return RedirectToPage("./List");
         }
+
     }
 }

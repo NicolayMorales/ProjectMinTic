@@ -15,7 +15,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return _appContext.Aeropuertos;
         }
  
-        public Aeropuertos GetAeropuertosWithId(int id){
+        public Aeropuertos GetAeropuertoWithId(int id){
           return _appContext.Aeropuertos.Find(id);
         }
         public Aeropuertos Create(Aeropuertos newAeropuerto)
@@ -23,17 +23,6 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
          var addAeropuerto = _appContext.Aeropuertos.Add(newAeropuerto);
             _appContext.SaveChanges();
             return addAeropuerto.Entity;
-        }
-    public Aeropuertos Update(Aeropuertos newAeropuerto){
-            var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == newAeropuerto.id);
-            if(aeropuerto != null){
-                aeropuerto.nombre = newAeropuerto.nombre;
-                aeropuerto.ciudad = newAeropuerto.ciudad;
-                aeropuerto.pais = newAeropuerto.pais;
-                aeropuerto.dirección = newAeropuerto.dirección;
-                
-            }
-        return aeropuerto;
         }
     public void Delete(int id)
         {
@@ -43,6 +32,16 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         _appContext.Aeropuertos.Remove(aeropuerto);
         _appContext.SaveChanges();
         }
-
-    }
+    public Aeropuertos Update(Aeropuertos newAeropuerto){
+            var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == newAeropuerto.id);
+            if(aeropuerto != null){
+                aeropuerto.nombre = newAeropuerto.nombre;
+                aeropuerto.ciudad = newAeropuerto.ciudad;
+                aeropuerto.pais = newAeropuerto.pais;
+                aeropuerto.coord_x = newAeropuerto.coord_x;
+                aeropuerto.coord_y = newAeropuerto.coord_y;
+            }
+        return aeropuerto;
+        }
+     }
 }

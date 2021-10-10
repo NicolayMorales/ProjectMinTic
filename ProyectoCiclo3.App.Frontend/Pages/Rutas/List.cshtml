@@ -1,40 +1,23 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListRutaModel
 @{
 }
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Origen</th>
-      <th scope="col">Destino</th>
-      <th scope="col">Tiempo_Estimado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Bogotá</td>
-      <td>Toronto</td>
-      <td>5H55M</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mexico</td>
-      <td>Medellin</td>
-      <td>4H20M</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Bogotá</td>
-      <td>Santa Marta</td>
-      <td>1H35M</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Chile</td>
-      <td>Bogotá</td>
-      <td>5H45M</td>
-    </tr>
-  </tbody>
+<table class="table">
+    @foreach (var ruta in Model.Rutas)
+    {
+         <tr>
+            <td>@ruta.origen</td>
+            <td>@ruta.destino</td>
+            <td>@ruta.tiempo_estimado</td>
+            <td>
+              <a class="btn btn-info" asp-page="./Details" asp-route-rutasId="@ruta.id">Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-rutasId="@ruta.id">Editar</a>
+              <form method="post">
+            <input type="number" class="d-none" id="id" asp-for="@ruta.id">
+              <button type="submit"class="btn btn-danger">Eliminar</button>
+            </form>
+              </td>
+        </tr>
+    }
 </table>

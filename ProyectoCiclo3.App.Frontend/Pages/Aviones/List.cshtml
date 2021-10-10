@@ -5,29 +5,21 @@
  
 <h1>Listado de Aviones</h1>
 <table class="table">
-    @foreach (var aviones in Model.Aviones)
+    @foreach (var avion in Model.Aviones)
     {
          <tr>
-      <th scope="col">id#</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">num_asientos</th>
-      <th scope="col">Wc</th>
-      <th scope="col">cap_maxima</th>
-    </tr>
-        <tr>
-            <td>@aviones.id</td>
-            <td>@aviones.marca</td>
-            <td>@aviones.modelo</td>
-            <td>@aviones.num_asientos</td>
-            <td>@aviones.Wc</td>
-            <td>@aviones.cap_maxima</td>
+            <td>@avion.id</td>
+            <td>@avion.marca</td>
+            <td>@avion.modelo</td>
+            <td>@avion.num_asientos</td>
+            <td>@avion.wc</td>
+            <td>@avion.cap_maxima</td>
             <td>
-              <a class="btn btn-info" asp-page="./Details" asp-route-avionesId="@aviones.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-avionesId="@aviones.id">Editar</a>
-             <form method="POST">
-            <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@aviones.id">
-              <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+              <a class="btn btn-info" asp-page="./Details" asp-route-avionesId="@avion.id">Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-avionesId="@avion.id">Editar</a>
+              <form method="post">
+            <input type="number" class="d-none" id="id" asp-for="@avion.id">
+              <button type="submit"class="btn btn-danger">Eliminar</button>
             </form>
               </td>
         </tr>

@@ -1,27 +1,35 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListAeropuertoModel
 @{
 }
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Ciudad</th>
-      <th>Nombre_Aeropuerto</th>
-      <th>Dirección</th>
-    </tr>
-  </thead>
-@foreach (var aeropuerto in Model.Aeropuertos)
+
+h1>Listado de Aeropuerto</h1>
+<table class="table">
+    @foreach (var aeropuerto in Model.Aeropuertos)
     {
+      <tr>
+      <th>#</th>
+      <th>Nombre</th>
+       <th>Ciudad</th>
+      <th>Pais</th>
+      <th>Coord_x</th>
+      <th>Coord_y</th>
+    </tr>
         <tr>
             <td>@aeropuerto.#</td>
-            <td>@aeropuerto.Ciudad</td>
-            <td>@aeropuerto.Nombre_Aeropuerto</td>
-            <td>@aeropuerto.Dirección</td>
+            <td>@aeropuerto.nombre</td>
+            <td>@aeropuerto.ciudad</td>
+            <td>@aeropuerto.pais</td>
+            <td>@aeropuerto.coord_x</td>
+            <td>@aeropuerto.coord_y</td>
             <td>
-     <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
-              <a class="btn btn-danger" href="">Eliminar</a>
+              <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertosId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertosId="@aeropuerto.id">Editar</a>
+             <form method="post">
+            <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@aeropuerto.id">
+              <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+            </form>
               </td>
         </tr>
     }

@@ -11,7 +11,6 @@ namespace ProyectoCiclo3.App.Frontend.Pages
 {
     public class FormRutaModel : PageModel
     {
- 
         private readonly RepositorioRutas repositorioRutas;
         [BindProperty]
         public Rutas Ruta {get;set;}
@@ -20,20 +19,23 @@ namespace ProyectoCiclo3.App.Frontend.Pages
        {
             this.repositorioRutas=repositorioRutas;
        }
- 
-        public void OnGet()
+         public void OnGet()
         {
  
         }
- 
-        public IActionResult OnPost()
+
+public IActionResult OnPost()
         {
             if(!ModelState.IsValid)
             {
                 return Page();
-            }            
-            Ruta = repositorioRutas.Create(Ruta);            
+            }
+            
+            {
+            Ruta= repositorioRutas.Create(Ruta);
+            }
             return RedirectToPage("./List");
         }
+
     }
 }

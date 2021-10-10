@@ -5,7 +5,7 @@ namespace ProyectoCiclo3.App.Dominio{
         public string marca { get; set; }
         public int modelo { get; set; }
         public int num_asientos { get; set; }
-        public int Wc { get; set; }
+        public int wc { get; set; }
         public int cap_maxima { get; set; }
     }
 

@@ -24,26 +24,26 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             _appContext.SaveChanges();
             return addAvion.Entity;
         }
-        public Aviones Update(Aviones newAvion){
-         var avion = _appContext.Aviones.Find(newAvion.id);
-            if(avion != null){
-                avion.marca = newAvion.marca;
-                avion.modelo = newAvion.modelo;
-                avion.Wc = newAvion.Wc;
-                avion.num_asientos = newAvion.num_asientos;
-                avion.cap_maxima = newAvion.cap_maxima;
-                //Guardar en base de datos
-                 _appContext.SaveChanges();
-            }
-        return avion;
-        }
-public void Delete(int id)
+        public void Delete(int id)
         {
         var avion = _appContext.Aviones.Find(id);
         if (avion == null)
             return;
         _appContext.Aviones.Remove(avion);
         _appContext.SaveChanges();
+        }
+        public Aviones Update(Aviones newAvion){
+         var avion = _appContext.Aviones.Find(newAvion.id);
+            if(avion != null){
+                avion.marca = newAvion.marca;
+                avion.modelo = newAvion.modelo;
+                avion.wc = newAvion.wc;
+                avion.num_asientos = newAvion.num_asientos;
+                avion.cap_maxima = newAvion.cap_maxima;
+                //Guardar en base de datos
+                 _appContext.SaveChanges();
+            }
+        return avion;
         }
 
         }

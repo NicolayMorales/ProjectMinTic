@@ -9,18 +9,21 @@ using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
-    public class FormAvionesModel : PageModel
+    public class FormAvionModel : PageModel
     {
         private readonly RepositorioAviones repositorioAviones;
         [BindProperty]
-        public Aviones Aviones {get;set;}
+        public Aviones Avion {get;set;}
  
-        public FormAvionesModel(RepositorioAviones repositorioAviones)
+        public FormAvionModel(RepositorioAviones repositorioAviones)
        {
             this.repositorioAviones=repositorioAviones;
        }
+         public void OnGet()
+        {
  
-        
+        }
+
 public IActionResult OnPost()
         {
             if(!ModelState.IsValid)
@@ -29,7 +32,7 @@ public IActionResult OnPost()
             }
             
             {
-            Aviones= repositorioAviones.Create(Aviones);
+            Avion= repositorioAviones.Create(Avion);
             }
             return RedirectToPage("./List");
         }

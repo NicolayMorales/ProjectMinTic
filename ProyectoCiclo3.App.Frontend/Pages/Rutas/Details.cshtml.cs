@@ -9,21 +9,19 @@ using ProyectoCiclo3.App.Dominio;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
-    public class DetailsRutasModel : PageModel
+   public class DetailsRutaModel : PageModel
     {
        private readonly RepositorioRutas repositorioRutas;
-              public Rutas Rutas {get;set;}
+              public Rutas Ruta {get;set;}
  
-        public DetailsRutasModel(RepositorioRutas repositorioRutas)
+        public DetailsRutaModel(RepositorioRutas repositorioRutas)
        {
             this.repositorioRutas=repositorioRutas;
        }
- 
-        public IActionResult OnGet(int rutasId)
+       public IActionResult OnGet(int rutaId)
         {
-                Rutas=repositorioRutas.GetRutasWithId(rutasId);
-                return Page();
- 
+            Ruta=repositorioRutas.GetRutaWithId(rutaId);
+            return Page();
         }
     }
 }
