@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,12 +13,17 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     public class FormAvionModel : PageModel
     {
         private readonly RepositorioAviones repositorioAviones;
+        private readonly RepositorioRutas repositorioRutas;
+        public IEnumerable<Rutas> Rutas {get;set;}
+
         [BindProperty]
         public Aviones Avion {get;set;}
  
-        public FormAvionModel(RepositorioAviones repositorioAviones)
+        public FormAvionModel(RepositorioAviones repositorioAviones,RepositorioRutas repositorioRutas)
        {
             this.repositorioAviones=repositorioAviones;
+            this.repositorioRutas=repositorioRutas;
+            
        }
          public void OnGet()
         {

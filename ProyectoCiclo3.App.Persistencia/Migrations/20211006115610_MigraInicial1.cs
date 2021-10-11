@@ -6,12 +6,7 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "numero_banos",
-                table: "Aviones",
-                newName: "num_asientos");
-
-            migrationBuilder.RenameColumn(
+                migrationBuilder.RenameColumn(
                 name: "numero_asientos",
                 table: "Aviones",
                 newName: "cap_maxima");
@@ -30,7 +25,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                     nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ciudad = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     pais = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    dirección = table.Column<int>(type: "int", nullable: false),
                     coord_x = table.Column<float>(type: "real", nullable: false),
                     coord_y = table.Column<float>(type: "real", nullable: false)
                 },
@@ -62,11 +56,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
 
             migrationBuilder.DropTable(
                 name: "Rutas");
-
-            migrationBuilder.RenameColumn(
-                name: "num_asientos",
-                table: "Aviones",
-                newName: "numero_banos");
 
             migrationBuilder.RenameColumn(
                 name: "cap_maxima",

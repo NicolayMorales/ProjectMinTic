@@ -1,13 +1,19 @@
 @page
 @model ProyectoCiclo3.App.Frontend.Pages.FormAeropuertoModel
 @{
+    var aeropuerto = Model.Aeropuerto;
 }
-
 
 <div class="text-center">
 <form method="post">
-  <label for="Nombre" class="form-label">Nombre:</label>
-  <input type="text" class="form-control" placeholder="Nombre"asp-for="Aeropuerto.nombre">
+  <label for="nombre" class="form-label">Nombre:</label>
+  <select asp-for="@aeropuerto.nombre" class="form-control">
+        <option value="">Seleccionar un Aeropuerto-</option>
+        @foreach (var avion in Model.Aviones)
+    {
+        <option value="@avion.id">@avion.marca - @avion.modelo - @avion.num_asientos - @avion.wc - @avion.cap_maxima</option>
+    }
+    </select>
   
   <label for="Ciudad" class="form-label">Ciudad:</label>
   <input type="text" class="form-control" placeholder="Ciudad"asp-for="Aeropuerto.ciudad">

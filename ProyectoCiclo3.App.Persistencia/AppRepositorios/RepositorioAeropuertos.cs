@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using ProyectoCiclo3.App.Dominio;
 using System.Linq;
@@ -33,13 +32,15 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         _appContext.SaveChanges();
         }
     public Aeropuertos Update(Aeropuertos newAeropuerto){
-            var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == newAeropuerto.id);
+          var aeropuerto = _appContext.Aeropuertos.Find(newAeropuerto.id);
             if(aeropuerto != null){
                 aeropuerto.nombre = newAeropuerto.nombre;
                 aeropuerto.ciudad = newAeropuerto.ciudad;
                 aeropuerto.pais = newAeropuerto.pais;
                 aeropuerto.coord_x = newAeropuerto.coord_x;
                 aeropuerto.coord_y = newAeropuerto.coord_y;
+              //Guardar en base de datos
+                 _appContext.SaveChanges();
             }
         return aeropuerto;
         }

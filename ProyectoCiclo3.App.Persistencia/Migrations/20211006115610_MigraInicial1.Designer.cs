@@ -36,9 +36,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                     b.Property<float>("coord_y")
                         .HasColumnType("real");
 
-                    b.Property<int>("dirección")
-                        .HasColumnType("int");
-
                     b.Property<string>("nombre")
                         .HasColumnType("nvarchar(max)");
 

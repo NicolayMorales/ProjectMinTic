@@ -15,7 +15,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                     marca = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     modelo = table.Column<int>(type: "int", nullable: false),
                     numero_asientos = table.Column<int>(type: "int", nullable: false),
-                    numero_banos = table.Column<int>(type: "int", nullable: false),
                     capacidad_maxima = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

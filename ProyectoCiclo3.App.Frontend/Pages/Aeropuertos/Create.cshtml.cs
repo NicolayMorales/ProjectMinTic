@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,16 +13,21 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     public class FormAeropuertoModel : PageModel
     {
         private readonly RepositorioAeropuertos repositorioAeropuertos;
+        private readonly RepositorioAviones repositorioAviones;
+        public IEnumerable<Aviones> Aviones {get;set;}
+
         [BindProperty]
         public Aeropuertos Aeropuerto {get;set;}
  
-        public FormAeropuertoModel(RepositorioAeropuertos repositorioAeropuertos)
+        public FormAeropuertoModel(RepositorioAeropuertos repositorioAeropuertos,RepositorioAviones repositorioAviones)
        {
             this.repositorioAeropuertos=repositorioAeropuertos;
+            
+            this.repositorioAviones=repositorioAviones;
        }
          public void OnGet()
         {
- 
+    Aviones=repositorioAviones.GetAll();
         }
 
 public IActionResult OnPost()
