@@ -9,8 +9,8 @@ using ProyectoCiclo3.App.Persistencia;
 namespace ProyectoCiclo3.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20211006115610_MigraInicial1")]
-    partial class MigraInicial1
+    [Migration("20211013132424_MigraInicial")]
+    partial class MigraInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,11 +30,11 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                     b.Property<string>("ciudad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("coord_x")
-                        .HasColumnType("real");
+                    b.Property<string>("coord_x")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("coord_y")
-                        .HasColumnType("real");
+                    b.Property<string>("coord_y")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nombre")
                         .HasColumnType("nvarchar(max)");
@@ -54,9 +54,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Wc")
-                        .HasColumnType("int");
-
                     b.Property<int>("cap_maxima")
                         .HasColumnType("int");
 
@@ -67,6 +64,9 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("num_asientos")
+                        .HasColumnType("int");
+
+                    b.Property<int>("wc")
                         .HasColumnType("int");
 
                     b.HasKey("id");

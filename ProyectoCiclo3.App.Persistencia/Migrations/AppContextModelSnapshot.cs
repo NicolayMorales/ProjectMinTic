@@ -28,14 +28,11 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                     b.Property<string>("ciudad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("coord_x")
-                        .HasColumnType("real");
+                    b.Property<string>("coord_x")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("coord_y")
-                        .HasColumnType("real");
-
-                    b.Property<int>("dirección")
-                        .HasColumnType("int");
+                    b.Property<string>("coord_y")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nombre")
                         .HasColumnType("nvarchar(max)");
@@ -55,9 +52,6 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Wc")
-                        .HasColumnType("int");
-
                     b.Property<int>("cap_maxima")
                         .HasColumnType("int");
 
@@ -68,6 +62,9 @@ namespace ProyectoCiclo3.App.Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("num_asientos")
+                        .HasColumnType("int");
+
+                    b.Property<int>("wc")
                         .HasColumnType("int");
 
                     b.HasKey("id");
