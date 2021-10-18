@@ -14,7 +14,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     {
        
         private readonly RepositorioAviones repositorioAviones;
-        public IEnumerable<Aviones> Aviones {get;set;}
+        public IEnumerable<Aviones> Aviones{get;set;}
          [BindProperty]
         public Aviones Avion {get;set;}
         

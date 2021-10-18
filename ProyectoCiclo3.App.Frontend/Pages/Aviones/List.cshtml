@@ -5,7 +5,7 @@
  
 <h1>Listado de Aviones</h1>
 <table class="table">
-    @foreach (var avion in Model.Aviones)
+   @foreach (var avion in Model.Aviones)
     {
          <tr>
             <td>@avion.id</td>
@@ -15,8 +15,8 @@
             <td>@avion.wc</td>
             <td>@avion.cap_maxima</td>
             <td>
-              <a class="btn btn-info" asp-page="./Details" asp-route-avioneId="@avion.id">Ver</a>
-              <a class="btn btn-info" asp-page="./Edit" asp-route-avioneId="@avion.id">Editar</a>
+           <a class="btn btn-info" asp-page="./Details" asp-route-avionId="@avion.id">Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-avionId="@avion.id">Editar</a>
               <form method="POST">
             <input type="number" class="d-none" id="id" asp-for="@avion.id">
               <button type="submit"class="btn btn-danger">Eliminar</button>

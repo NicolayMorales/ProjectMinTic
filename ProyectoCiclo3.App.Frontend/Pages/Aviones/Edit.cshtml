@@ -7,12 +7,15 @@
 <div class="text-center">
   <form method="post">
   <label for="nombre" class="form-label">Marca:</label>
+  <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" asp-for="@avion.marca" required>
   
-  <label for="tipo" class="form-label">Modelo:</label>
-  
-  <label for="int" class="form-label">Num_Asientos:</label>
-  
-  <label for="tipo" class="form-label">Wc:</label>
+  <label for="modelo" class="form-label">Modelo:</label>
+   <input type="number" class="form-control" id="modelo" name="modelo" placeholder="Modelo" asp-for="@avion.modelo" required>
+   
+   <label for="numero_asientos" class="form-label">Numeros de Asientos: </label>   
+   <input type="number" class="form-control" id="num_Asientos" name="Num_Asientos" placeholder="Numero Asientos" asp-for="@avion.num_asientos" required>
+   
+   <label for="tipo" class="form-label">Wc:</label>
   
   <label for="tipo" class="form-label">Cap_Maxima:</label>
   <input type="text" class="form-control" id="cap_maxima" name="cap_maxima" placeholder="Cap_Maxima"asp-for="@avion.cap_maxima">

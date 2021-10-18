@@ -7,7 +7,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
 {
     public class RepositorioAeropuertos
     {
-        List<Aeropuertos> aeropuertos;
+        List<Aeropuertos> Aeropuertos;
      private readonly AppContext _appContext = new AppContext();  
         public IEnumerable<Aeropuertos> GetAll()
         {
@@ -23,14 +23,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             _appContext.SaveChanges();
             return addAeropuerto.Entity;
         }
-    public void Delete(int id)
-        {
-        var aeropuerto = _appContext.Aeropuertos.Find(id);
-        if (aeropuerto == null)
-            return;
-        _appContext.Aeropuertos.Remove(aeropuerto);
-        _appContext.SaveChanges();
-        }
+    
     public Aeropuertos Update(Aeropuertos newAeropuerto){
           var aeropuerto = _appContext.Aeropuertos.Find(newAeropuerto.id);
             if(aeropuerto != null){
@@ -44,5 +37,13 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             }
         return aeropuerto;
         }
-     }
+public void Delete(int id)
+        {
+        var aeropuerto = _appContext.Aeropuertos.Find(id);
+        if (aeropuerto == null)
+            return;
+        _appContext.Aeropuertos.Remove(aeropuerto);
+        _appContext.SaveChanges();
+        }     
+}
 }

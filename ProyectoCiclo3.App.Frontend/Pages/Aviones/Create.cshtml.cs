@@ -22,13 +22,10 @@ namespace ProyectoCiclo3.App.Frontend.Pages
         public FormAvionModel(RepositorioAviones repositorioAviones,RepositorioRutas repositorioRutas)
        {
             this.repositorioAviones=repositorioAviones;
-            this.repositorioRutas=repositorioRutas;
             
+            this.repositorioRutas=repositorioRutas;
        }
-         public void OnGet()
-        {
- 
-        }
+        
 
 public IActionResult OnPost()
         {
@@ -37,9 +34,7 @@ public IActionResult OnPost()
                 return Page();
             }
             
-            {
             Avion= repositorioAviones.Create(Avion);
-            }
             return RedirectToPage("./List");
         }
 

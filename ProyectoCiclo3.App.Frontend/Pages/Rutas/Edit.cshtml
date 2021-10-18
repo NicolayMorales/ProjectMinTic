@@ -8,9 +8,9 @@
 <form method="post">
   
   <label for="origen" class="form-label">Origen:</label>
-  
-  <label for="destino" class="form-label">Destino:</label>
-  
+<input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@ruta.origen">
+    <label for="destino" class="form-label">Destino:</label>
+    <input type="text" class="form-control" id="destino" name="destino" placeholder="Destino" asp-for="@ruta.destino">
   <label for="tiempo_estimado" class="form-label">Tiempo_Estimado:</label>
   <input type="int" class="form-control" id="tiempo_estimado" name="tiempo_estimado" placeholder="Tiempo_Estimado"asp-for="@ruta.tiempo_estimado">
   <hr>

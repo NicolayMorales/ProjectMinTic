@@ -7,7 +7,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
 {
     public class RepositorioAviones
     {
-        List<Aviones> aviones;
+        List<Aviones> Aviones;
         private readonly AppContext _appContext = new AppContext();  
    
         public IEnumerable<Aviones> GetAll()
@@ -24,14 +24,7 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             _appContext.SaveChanges();
             return addAvion.Entity;
         }
-        public void Delete(int id)
-        {
-        var avion = _appContext.Aviones.Find(id);
-        if (avion == null)
-            return;
-        _appContext.Aviones.Remove(avion);
-        _appContext.SaveChanges();
-        }
+        
         public Aviones Update(Aviones newAvion){
          var avion = _appContext.Aviones.Find(newAvion.id);
             if(avion != null){
@@ -45,6 +38,13 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             }
         return avion;
         }
-
+public void Delete(int id)
+        {
+        var avion = _appContext.Aviones.Find(id);
+        if (avion == null)
+            return;
+        _appContext.Aviones.Remove(avion);
+        _appContext.SaveChanges();
+        }
         }
     }
