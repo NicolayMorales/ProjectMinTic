@@ -4,12 +4,12 @@
     var ruta = Model.Ruta;
 }
 <div class="text-center">
-<form method="POST">
+<form method="post">
   
   
   <label for="origen" class="form-label">Origen:</label>
   <select asp-for="@ruta.origen" class="form-control">
-        <option value="">Seleccionar un Aeropuerto-</option>
+        <option value="">Seleccionar Ruta-</option>
         @foreach (var aeropuerto in Model.Aeropuertos)
     {
         <option value="@aeropuerto.id">@aeropuerto.nombre - @aeropuerto.ciudad/@aeropuerto.pais</option>

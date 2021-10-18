@@ -5,15 +5,9 @@
 }
 
 <div class="text-center">
-<form method="post">
+<form method="POST">
   <label for="nombre" class="form-label">Nombre:</label>
-  <select asp-for="@aeropuerto.nombre" class="form-control">
-        <option value="">Seleccionar un Aeropuerto-</option>
-        @foreach (var avion in Model.Aviones)
-    {
-        <option value="@avion.id">@avion.marca - @avion.modelo - @avion.num_asientos - @avion.wc - @avion.cap_maxima</option>
-    }
-    </select>
+  <input type="text" class="form-control" placeholder="Nombre"asp-for="Aeropuerto.nombre">
   
   <label for="Ciudad" class="form-label">Ciudad:</label>
   <input type="text" class="form-control" placeholder="Ciudad"asp-for="Aeropuerto.ciudad">
@@ -22,10 +16,10 @@
   <input type="text" class="form-control" placeholder="Pais"asp-for="Aeropuerto.pais">
 
   <label for="Coord_x" class="form-label">Coord_x:</label>
-  <input type="int" class="form-control" placeholder="Coord_x"asp-for="Aeropuerto.coord_x">
+  <input type="number" class="form-control" placeholder="Coord_x"asp-for="Aeropuerto.coord_x">
   
   <label for="Coord_y" class="form-label">Coord_y:</label>
-  <input type="int" class="form-control" placeholder="Coord_y"asp-for="Aeropuerto.coord_y">
+  <input type="number" class="form-control" placeholder="Coord_y"asp-for="Aeropuerto.coord_y">
   <hr>
   <button type="submit" class="btn btn-success">Enviar</button>
 </form>

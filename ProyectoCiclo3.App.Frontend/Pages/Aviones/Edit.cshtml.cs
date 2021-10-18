@@ -38,7 +38,8 @@ public IActionResult OnPost()
             Avion= repositorioAviones.Update(Avion);
             }
             return RedirectToPage("./List");
-        }
+            
 
+    }
     }
 }

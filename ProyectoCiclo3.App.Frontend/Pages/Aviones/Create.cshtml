@@ -4,17 +4,9 @@
     var avion = Model.Avion;
 }
 <div class="text-center">
-<form method="post">
+<form method="POST">
    <label for="marca" class="form-label">Marca:</label>
-   <select asp-for="@avion.marca" class="form-control">
-        <option value="">Seleccionar un Avion-</option>
-        @foreach (var ruta in Model.Rutas)
-    {
-        <option value="@ruta.id">@ruta.origen - @ruta.destino - @ruta.tiempo_estimado</option>
-    }
-    </select>
-   
-   
+   <input type="text" class="form-control" id="Marca" placeholder="Marca" asp-for="@avion.marca" required> 
     <label for="modelo" class="form-label">Modelo:</label>
     <input type="number" class="form-control" id="modelo" placeholder="Modelo" asp-for="@avion.modelo" required>
     <label for="num_asientos" class="form-label">Numeros de Asientos: </label>

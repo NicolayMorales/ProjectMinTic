@@ -2,18 +2,9 @@
 @model ProyectoCiclo3.App.Frontend.Pages.ListAeropuertoModel
 @{
 }
-h1>Listado de Aeropuertos</h1>
-<table class="table table-bordered"">
-          <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col">Pais </th>
-      <th scope="col">Coord_x</th>
-      <th scope="col">Coord_y</th>
-    </tr>
-  </thead>
+<h1>Listado de Aeropuertos</h1>
+<table class="table table-bordered">
+        
     @foreach (var aeropuerto in Model.Aeropuertos)
     {
       <tr>
